@@ -20,6 +20,12 @@ public class Exercise001 {
     }
 
     public int countLinuxUsers(List<User> users) {
-        return 0;
+        int count = 0;
+        for(User user : users) {
+            if ("Linux".equals(user.getType())) {
+                count++;
+            }
+        }
+        return count;
     }
 }
