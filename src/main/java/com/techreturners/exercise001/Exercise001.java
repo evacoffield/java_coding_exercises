@@ -12,7 +12,14 @@ public class Exercise001 {
     }
 
     public double addVat(double originalPrice, double vatRate) {
-        return 0.0;
+        double vat = (originalPrice + (originalPrice * vatRate / 100));
+        if(Math.abs(vat-Math.floor(vat)) < 0.001){
+            int truncatedNumberInt = (int)vat;
+            return truncatedNumberInt;
+        } else {
+            vat = Math.floor(vat * 100) / 100;
+            return vat;
+        }
     }
 
     public String reverse(String sentence) {
@@ -22,7 +29,7 @@ public class Exercise001 {
     public int countLinuxUsers(List<User> users) {
         int count = 0;
         for(User user : users) {
-            if ("Linux".equals(user.getType())) {
+            if (user.getType() == "Linux") {
                 count++;
             }
         }
