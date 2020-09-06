@@ -6,8 +6,8 @@ public class Exercise002 {
         return "Manchester".equals(person.getCity());
     }
 
-    public boolean canWatchFilm(/* Person person, int ageLimit*/) {
-        return false;
+    public boolean canWatchFilm(Person person, int ageLimit) {
+        return person.getAge() >= ageLimit;
     }
     
 }
